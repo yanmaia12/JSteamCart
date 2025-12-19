@@ -1,0 +1,13 @@
+# Ignorar arquivos da IDE (IntelliJ)
+.idea/
+*.iml
+*.iws
+
+# Ignorar compilados (binários)
+out/
+target/
+build/
+*.class
+
+# Ignorar configurações locais
+.DS_Store

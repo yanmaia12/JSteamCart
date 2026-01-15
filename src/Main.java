@@ -3,6 +3,7 @@ import api.ApiSteam;
 import records.Jogo;
 import records.SteamID;
 import service.Calculos;
+import service.Sorteador;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class Main {
         Calculos calculos = new Calculos();
         ApiCheapShark apiCheapShark = new ApiCheapShark();
         ApiSteam apiSteam = new ApiSteam();
+        Sorteador sorteador = new Sorteador();
 
         Double saldoSteam = 0.0;
 
@@ -65,5 +67,11 @@ public class Main {
         System.out.println();
         calculos.quantoSobra(saldoSteam, carrinhoJogos);
 
+        System.out.println();
+        System.out.println("Quer sortear um jogo do carrinho pra comprar gagora? (s/n) ");
+        String res = scanner.nextLine().toLowerCase().substring(0, 1);
+        if (res.equals("s")){
+            System.out.println(sorteador.sorteador(carrinhoJogos));
+        }
     }
 }
